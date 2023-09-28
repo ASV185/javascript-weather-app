@@ -1,0 +1,88 @@
+h1 {
+  color: rgb(41, 40, 40);
+  font-size: 45px;
+  font-family: "Merriweather", serif;
+}
+
+.container-fluid {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+}
+
+.today-section {
+  border-radius: 40%;
+}
+
+.today-section .card-body {
+  display: block;
+  margin: 0 auto;
+}
+
+.today-section h2 {
+  font-size: 40px;
+  font-family: "Merriweather", serif;
+}
+
+.today-section h3 {
+  font-size: 25px;
+  font-family: "Merriweather", serif;
+}
+
+.today-section .units {
+  font-size: 20px;
+  align-items: start;
+}
+
+h6 {
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Merriweather", serif;
+}
+
+.today-weather-section {
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Merriweather", serif;
+}
+
+.weather-forecast-section h4 {
+  font-size: 20px;
+}
+
+.weather-forecast-section h5 {
+  font-size: 15px;
+}
+
+.mon-forecast-section {
+  border-radius: 7px;
+  font-family: "Merriweather", serif;
+}
+
+.tues-forecast-section {
+  border-radius: 7px;
+  font-family: "Merriweather", serif;
+}
+
+.wed-forecast-section {
+  border-radius: 7px;
+  font-family: "Merriweather", serif;
+}
+
+.thurs-forecast-section {
+  border-radius: 7px;
+  font-family: "Merriweather", serif;
+}
+
+.materials-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+footer {
+  text-align: center;
+  font-weight: bold;
+}
