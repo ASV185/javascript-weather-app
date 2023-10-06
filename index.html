@@ -25,22 +25,23 @@
             <form class="col-6 p-2" id="search-form">
                 <div class="input-group input-group-sm mb-3 search-section">
                     <input type="text" class="form-control" id="city-input" arial-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" />
+                        aria-describedby="inputGroup-sizing-sm" autocomplete="off" />
                     <span class="input-group-text" id="inputGroup-sizing-sm"><span
                             class="material-symbols-outlined">search</span></span>
                 </div>
             </form>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 weather-temperature">
                 <div class="card bg-primary bg-gradient mb-3 today-section" style="max-width: 18rem;">
                     <div class="card-body today-section">
                         <img src="images/sun-cloudy.png" alt="sun cloudy icon" id="icon" />
                         <p class="card-text m-0">
                         <h2 class="temperature text-white" id="temperature"></h2>
                         <span class="units d-flex align-items-start text-white"><a href="#" id="fahrenheit-link"
-                                class="text-white">F</a> |
-                            C</span>
+                                class="active fahrenheit-link">F</a> | <a href="#" id="celsius-link"
+                                class="celsius-link">C</a>
+                        </span>
                         <h3 id="description" class="text-white pt-2">
                         </h3>
                         </p>

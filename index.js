@@ -3,7 +3,7 @@ let now = new Date();
 
 let date = now.getDate();
 let hours = now.getHours();
-if (hours > 10) {
+if (hours < 10) {
   hours = `0${hours}`;
 }
 
@@ -37,9 +37,6 @@ let month = months[now.getMonth()];
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.city;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.temperature.current
-  );
   document.querySelector("#humidity").innerHTML =
     response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
@@ -54,6 +51,11 @@ function displayWeatherCondition(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.condition.description);
+  celsiusTemperature = Math.round(response.data.temperature.current);
+  fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
+  document.querySelector("#temperature").innerHTML = Math.round(
+    fahrenheitTemperature
+  );
 } //function allows to get specific weather information in openweathermap api
 
 function searchCity(city) {
@@ -79,6 +81,24 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 } //Current location using Geolocation api
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  temperatureElement.innerHTML = fahrenheitTemperature;
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  temperatureElement.innerHTML = celsiusTemperature;
+}
+
+let celsiusTemperature = null;
+
 //date feature
 
 let dateElement = document.querySelector("#date-section");
@@ -94,3 +114,10 @@ searchCity("El Paso");
 // Current location feature
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+//Unit Conversion
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
