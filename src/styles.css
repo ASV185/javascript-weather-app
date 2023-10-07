@@ -55,31 +55,20 @@ h6 {
 }
 
 .weather-forecast-section h4 {
-  font-size: 20px;
+  font-size: 19px;
 }
 
 .weather-forecast-section h5 {
   font-size: 15px;
 }
 
-.mon-forecast-section {
+.forecast-section {
   border-radius: 7px;
   font-family: "Merriweather", serif;
 }
 
-.tues-forecast-section {
-  border-radius: 7px;
-  font-family: "Merriweather", serif;
-}
-
-.wed-forecast-section {
-  border-radius: 7px;
-  font-family: "Merriweather", serif;
-}
-
-.thurs-forecast-section {
-  border-radius: 7px;
-  font-family: "Merriweather", serif;
+.weather-forecast-temperature-min {
+  opacity: 0.7;
 }
 
 .materials-symbols-outlined {
