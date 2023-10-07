@@ -37,6 +37,10 @@ h1 {
   align-items: start;
 }
 
+.today-section #description {
+  text-transform: capitalize;
+}
+
 h6 {
   font-weight: 500;
   font-size: 16px;
