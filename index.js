@@ -41,7 +41,7 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
 
   return days[day];
-}
+} // added function for days in the columns of forecast
 
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -71,7 +71,7 @@ function displayForecast(response) {
     }
   });
   forecastElement.innerHTML = forecastHTML;
-}
+} // added function to add forecast columns for 4 days
 
 function getForecast(coordinates) {
   let apiKey = "6a8co22f6f92bdd5a654001ta38ff409";
@@ -143,8 +143,3 @@ searchCity("El Paso");
 // Current location feature
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-//Unit Conversion
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
