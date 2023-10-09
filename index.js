@@ -60,10 +60,10 @@ function displayForecast(response) {
         forecastDay.condition.icon
       }.png" alt="sun cloud icon" width="50" />
       <h5 class="weather-forecast-temperature-max">${Math.round(
-        (forecastDay.temperature.maximum * 9) / 5 + 32
+        forecastDay.temperature.maximum
       )}°F</h5>
       <h5 class="weather-forecast-temperature-max">${Math.round(
-        (forecastDay.temperature.minimum * 9) / 5 + 32
+        forecastDay.temperature.minimum
       )}°F</h5>
     </div>
   </div>
@@ -75,7 +75,7 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "6a8co22f6f92bdd5a654001ta38ff409";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=imperial`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
@@ -96,8 +96,7 @@ function displayWeatherCondition(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.condition.description);
-  celsiusTemperature = Math.round(response.data.temperature.current);
-  fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
+  fahrenheitTemperature = Math.round(response.data.temperature.current);
   document.querySelector("#temperature").innerHTML = Math.round(
     fahrenheitTemperature
   );
@@ -106,7 +105,7 @@ function displayWeatherCondition(response) {
 
 function searchCity(city) {
   let apiKey = "6a8co22f6f92bdd5a654001ta38ff409";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 } //Using api key, openweathermap api, and axios to receive the weather of city
 
@@ -127,22 +126,6 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 } //Current location using Geolocation api
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  fahrenheitLink.classList.add("active");
-  celsiusLink.classList.remove("active");
-  temperatureElement.innerHTML = fahrenheitTemperature;
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  temperatureElement.innerHTML = celsiusTemperature;
-}
-
 let celsiusTemperature = null;
 
 //date feature
@@ -162,8 +145,6 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 //Unit Conversion
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);

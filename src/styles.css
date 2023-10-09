@@ -75,22 +75,8 @@ h6 {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
-.weather-temperature .units .fahrenheit-link {
+.weather-temperature .units {
   color: white;
-}
-
-.weather-temperature .units .celsius-link {
-  color: white;
-}
-
-.weather-temperature .units .active:hover {
-  text-decoration: none;
-}
-
-.weather-temperature .units .active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
 }
 
 footer {
