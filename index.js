@@ -35,6 +35,51 @@ let month = months[now.getMonth()];
 
 //added date
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = "";
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `
+    <div class="bg-success bg-gradient p-2 text-white bg-opacity-75 mb-2 forecast-section">
+    <div class="d-flex justify-content-evenly">
+      <h4 class="weather-forecast-date">${formatDay(forecastDay.time)}</h4>
+      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+        forecastDay.condition.icon
+      }.png" alt="sun cloud icon" width="50" />
+      <h5 class="weather-forecast-temperature-max">${Math.round(
+        (forecastDay.temperature.maximum * 9) / 5 + 32
+      )}°F</h5>
+      <h5 class="weather-forecast-temperature-max">${Math.round(
+        (forecastDay.temperature.minimum * 9) / 5 + 32
+      )}°F</h5>
+    </div>
+  </div>
+  `;
+    }
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "6a8co22f6f92bdd5a654001ta38ff409";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#humidity").innerHTML =
@@ -56,6 +101,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     fahrenheitTemperature
   );
+  getForecast(response.data.coordinates);
 } //function allows to get specific weather information in openweathermap api
 
 function searchCity(city) {
