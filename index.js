@@ -53,7 +53,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-    <div class="bg-success bg-gradient p-2 text-white bg-opacity-75 mb-2 forecast-section">
+    <div class= "p-2 text-white bg-opacity-75 mb-2 forecast-section">
     <div class="d-flex justify-content-evenly">
       <h4 class="weather-forecast-date">${formatDay(forecastDay.time)}</h4>
       <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
