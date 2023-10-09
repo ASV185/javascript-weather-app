@@ -77,12 +77,10 @@ h6 {
 
 .weather-temperature .units .fahrenheit-link {
   color: white;
-  text-decoration: none;
 }
 
 .weather-temperature .units .celsius-link {
   color: white;
-  text-decoration: none;
 }
 
 .weather-temperature .units .active:hover {
