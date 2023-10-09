@@ -32,9 +32,15 @@ h1 {
   font-family: "Merriweather", serif;
 }
 
-.today-section .units {
-  font-size: 20px;
-  align-items: start;
+.temperature #temperature {
+  line-height: 1;
+}
+
+.temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -28px;
+  left: 55px;
 }
 
 .today-section #description {
