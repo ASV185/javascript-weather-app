@@ -16,65 +16,73 @@
 </head>
 
 <body>
-    <img src="images/different-flowers.jpg" alt="different flowers pic" width="1000">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-6 city-section">
-                <h1 class="p-3" id="city">
-                </h1>
-            </div>
-            <form class="col-6 p-2" id="search-form">
-                <div class="input-group input-group-sm mb-3 search-section">
-                    <input type="text" class="form-control" id="city-input" arial-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" autocomplete="off" />
-                    <span class="input-group-text" id="inputGroup-sizing-sm"><span
-                            class="material-symbols-outlined">search</span></span>
+    <div class="app-image-section position-relative">
+        <div class="container-fluid position-absolute top-50 start-50 translate-middle bg-light align-middle">
+            <section class="temperature-data">
+                <div class="row">
+                    <div class="col-6 city-section">
+                        <h1 class="p-3" id="city">
+                        </h1>
+                    </div>
+                    <form class="col-6 p-2" id="search-form">
+                        <div class="input-group input-group-sm mb-3 search-section">
+                            <input type="text" class="form-control" id="city-input" arial-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" autocomplete="off" />
+                            <span class="input-group-text" id="inputGroup-sizing-sm"><span
+                                    class="material-symbols-outlined">search</span></span>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-        <div class="row">
-            <div class="col-6 weather-temperature">
-                <div class="card mb-3 today-section" style="max-width: 18rem;">
-                    <div class="card-body today-section">
-                        <img src="images/sun-cloudy.png" alt="sun cloudy icon" id="icon" />
-                        <p class="card-text m-0">
-                        <h2 class="temperature text-white"><span id="temperature"></span>
-                            <div class="units">°F</div>
-                        </h2>
-                        <h3 id="description" class="text-white pt-2">
-                        </h3>
-                        </p>
+                <div class="row">
+                    <div class="col-6 weather-temperature">
+                        <div class="card mb-3 today-section" style="max-width: 18rem;">
+                            <div class="card-body today-section">
+                                <img src="images/sun-cloudy.png" alt="sun cloudy icon" id="icon" />
+                                <p class="card-text m-0">
+                                <h2 class="temperature text-white"><span id="temperature"></span>
+                                    <div class="units">°F</div>
+                                </h2>
+                                <h3 id="description" class="text-white pt-2">
+                                </h3>
+                                </p>
+                            </div>
+                        </div>
+                        <h6 class="date-section p-2" id="date-section"></h6>
+                        <div class="today-weather-section bg-warning-subtle bg-gradient mt-2">
+                            <span class="material-symbols-outlined">
+                                humidity_percentage:
+                            </span>
+                            <span id="humidity"></span>%
+                            <span class="material-symbols-outlined">
+                                air:
+                            </span>
+                            <span id="wind"></span> km/h
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="current-location-button mt-0 mb-2 text-center">
+                            <a href="#" id="current-location-button">
+                                <img src="images/location-pic.png" alt="location pic">
+                            </a>
+                        </div>
+                        <div class="weather-forecast-section" id="forecast"></div>
                     </div>
                 </div>
-                <h6 class="date-section p-2" id="date-section"></h6>
-                <div class="today-weather-section bg-success-subtle bg-gradient mt-2">
-                    <span class="material-symbols-outlined">
-                        humidity_percentage:
-                    </span>
-                    <span id="humidity"></span>%
-                    <span class="material-symbols-outlined">
-                        air:
-                    </span>
-                    <span id="wind"></span> km/h
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="current-location-button mt-0 mb-2 text-center">
-                    <a href="#" id="current-location-button">
-                        <img src="images/location-pic.png" alt="location pic">
+                <footer>
+                    <a href="https://github.com/ASV185/javascript-weather-app" alt="github-link" class="github-link">
+                        Open-sourced
                     </a>
-                </div>
-                <div class="weather-forecast-section" id="forecast"></div>
-            </div>
+                    by Amanda Ventura
+                    Icon location by Freepik.
+                    <br>
+                    Background image by Scott Webb.
+                </footer>
+            </section>
         </div>
-        <footer>
-            <a href="https://github.com/ASV185/javascript-weather-app" alt="github-link" class="github-link">
-                Open-sourced
-            </a>
-            by Amanda Ventura
-            Icon location by Freepik.
-        </footer>
+        <img src="images/mini-pumpkins-pic.jpg" alt="Mini Pumpkins pic"
+            class="object-fit-md-contain border rounded mw-100 mh-100">
         <script src="index.js"></script>
+    </div>
 </body>
 
 </html>

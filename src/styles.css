@@ -13,10 +13,6 @@ h1 {
   margin: 0 auto;
 }
 
-.container-fluid img {
-  position: relative;
-}
-
 .weather-temperature .card {
   background: #f12711; /* fallback for old browsers */
   background: -webkit-linear-gradient(
