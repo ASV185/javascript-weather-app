@@ -34,6 +34,16 @@ let months = [
 let month = months[now.getMonth()];
 
 //added date
+function changeImage() {
+  document
+    .querySelector("#background-img")
+    .setAttribute(
+      "src",
+      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/415/original/mini-pumpkins-pic.jpg?1697835983`
+    );
+}
+
+setTimeout(changeImage, 10000);
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
