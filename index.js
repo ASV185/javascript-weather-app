@@ -39,7 +39,7 @@ function changeImage() {
     .querySelector("#background-img")
     .setAttribute(
       "src",
-      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/415/original/mini-pumpkins-pic.jpg?1697835983`
+      `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/140/999/original/front-steps-pumpkins.jpg?1724623469`
     );
 }
 
